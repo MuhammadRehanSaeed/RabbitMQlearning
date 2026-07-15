@@ -26,19 +26,20 @@ public class betterConsumer {
     ) throws IOException {
         System.out.println(event.getEmail());
         try{
-            int i=10/0;
-            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-        }catch(Exception e){
-
-            try {
-                //check here if messgageid is already processed to be idempotent
+            //check here if messgageid is already processed to be idempotent
 
 //                if(repo.existbyid(event.getmessageid()))
 //                {
 //                    channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
 //                    return;
 //                }
-                //ok
+            //ok
+            int i=10/0;
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        }catch(Exception e){
+
+            try {
+
 
                 if(event.getRetryCount() < 3){
 
