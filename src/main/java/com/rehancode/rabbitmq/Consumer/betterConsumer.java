@@ -38,6 +38,7 @@ public class betterConsumer {
 //                    channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
 //                    return;
 //                }
+                //ok
 
                 if(event.getRetryCount() < 3){
 
